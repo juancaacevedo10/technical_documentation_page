@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Technical_documentation</title>
+</head>
+<body>
+    
+    <main id="main-doc">
+
+       
+
+            <nav id="navbar">
+                <header id="header">Documentacion PHP</header>
+                <a class="nav-link" href="#Introduccion">Introduccion</a><hr>
+                <a class="nav-link" href="#Precedencia_de_operadores">Precedencia de operadores </a><hr>
+                <a class="nav-link" href="#Variables_Conceptos_básicos">Variables Conceptos básicos</a><hr>
+                <a class="nav-link" href="#Estructuras_de_Control_basicas">Estructuras de Control basicas</a><hr>
+                <a class="nav-link" href="#Funciones_definidas_por_el_usuario">Funciones definidas por el usuario</a><hr>
+
+            </nav>
+
+
+
+        <section id="main-section">
+
+        
+            <section class="main-section" id="Introduccion">
+                    <header>Introduccion</header>
+                    <p>Conocer los elementos mas importantes de php</p>
+                    <p>PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de código abierto muy popular especialmente adecuado para el desarrollo web y que puede ser incrustado en HTML.</p>
+                    <p>las páginas de PHP contienen HTML con código incrustado que hace "algo" El código de PHP está encerrado entre las etiquetas especiales de comienzo y final <?php y ?> que permiten entrar y salir del "modo PHP".</p>
+                    <h3>Que Ventajas tiene php</h3>
+                    <ul>
+                        <li>Puede emplearse en todos los sistemas operativos principales, incluyendo Linux</li>
+                        <li>Admite la mayoría de servidores web de hoy en día, incluyendo Apache, IIS, y muchos otros</li>
+                        <li>Posibilidad de utilizar programación por procedimientos o programación orientada a objetos (POO)</li>
+                        <li>Destacable por su soporte para un amplio abanico de bases de datos.</li>
+                    </ul>
+                    <h3>Ejemplo para mostrar mensajes en pantalla</h3>
+                    <code> 
+                            <span>echo "¡Hola, soy un script de PHP!";</span>
+                    </code>
+                </section>
+                <section class="main-section" id="Precedencia_de_operadores">
+                    <header>Precedencia de operadores </header>
+                    <p>La precedencia de un operador indica qué tan "estrechamente" se unen dos expresiones juntas. Por ejemplo, en la expresión 1 + 5 * 3 , la respuesta es 16 y no 18 porque el operador de multiplicación ("*") tiene una precedencia mayor que el operador de adición ("+"). Los paréntesis pueden ser usados para forzar la precedencia, si es necesario. Por ejemplo: (1 + 5) * 3 se evalúa como 18.</p>
+                    <p>El uso de paréntesis, incluso cuando no es estrictamente necesario, a menudo puede aumentar la legibilidad del código haciendo grupos explícitamente en lugar de confiar en la precedencia y asociatividad implícitas del operador.</p> 
+                    <code>
+                       
+                        <span>$a = 3 * 3 % 5; // (3 * 3) % 5 = 4 // (3 * 3) % 5 = 4</span><br>
+                        <span>$a = true ? 0 : true ? 1 : 2; // (true ? 0 : true) ? 1 : 2 = 2</span><br>
+                        <span>$a = 1;</span><br>
+                        <span>$b = 2;</span> <br>
+                        <span>$a = $b += 3; // $a = ($b += 3) -> $a = 5, $b = 5</span>
+                    </code>
+                </section>
+
+                <section class="main-section" id="Variables_Conceptos_básicos">
+                    <header>Variables Conceptos básicos </header>
+                    <p>En PHP las variables se representan con un signo de dólar seguido por el nombre de la variable. El nombre de la variable es sensible a minúsculas y mayúsculas.</p>
+                    <p>De forma predeterminada, las variables siempre se asignan por valor. Esto significa que cuando se asigna una expresión a una variable, el valor completo de la expresión original se copia en la variable de destino. Esto quiere decir que, por ejemplo, después de asignar el valor de una variable a otra, los cambios que se efectúen a una de esas variables no afectará a la otra. </p>
+                    <code>
+                       <span>$var = 'Roberto';</span> <br>
+                       <span>$Var = 'Juan';</span><br>
+                       <span>echo "$var, $Var";      // imprime "Roberto, Juan"</span><br>
+                        <span>$4site = 'aun no';      // inválido; comienza con un número</span><br>
+                        <span>$_4site = 'aun no';     // válido; comienza con un carácter de subrayado</span><br>
+                        <span>$täyte = 'mansikka';    // válido; 'ä' es ASCII (Extendido) 228 </span><br>
+
+                    </code>
+                    <p>No es necesario inicializar variables en PHP, sin embargo, es una muy buena práctica. Las variables no inicializadas tienen un valor predeterminado de acuerdo a su tipo dependiendo del contexto en el que son usadas - las booleanas se asumen como FALSE, los enteros y flotantes como cero, las cadenas (p.ej. usadas en echo) se establecen como una cadena vacía y los arrays se convierten en un array vacío.</p>
+                </section>
+
+                <section class="main-section"id="Estructuras_de_Control_basicas">
+                    <header>Estructuras de Control basicas</header>
+                    <p>Todo script PHP está construido según una serie de sentencias. Una sentencia puede ser una asignación, una llamada de función, un ciclo, una sentencia condicional o incluso una sentencia que no hace nada (una sentencia vacía). Las sentencias generalmente finalizan con un punto y coma. </p>
+                    <h3>if</h3>
+                    <p>El constructor if es una de las características más importantes de muchos lenguajes, incluido PHP. Permite la ejecución condicional de fragmentos de código. PHP dispone de una estructura if que es similar a la de C:</p>
+
+                       <p> if (expr)
+                          sentencia</p>
+                        <p>Como se describe en la sección sobre expresiones , la expresión es evaluada a su valor booleano. Si la expresión se evalúa como TRUE, PHP ejecutará la sentencia y si se evalúa como FALSE la ignorará. Más información sobre qué valores evalúan como FALSE se puede encontrar en la sección 'Convirtiendo a booleano'.</p>
+                    <code>
+                        <span>if ($a > $b) {
+                            echo "a es mayor que b";
+                          }</span>
+                    </code>
+                    <h3>else</h3>
+                    <p>Con frecuencia se desea ejecutar una sentencia si una determinada condición se cumple y una sentencia diferente si la condición no se cumple. Esto es para lo que sirve else. El else extiende una sentencia if para ejecutar una sentencia en caso que la expresión en la sentencia if se evalúe como FALSE. Por ejemplo, el siguiente código deberá mostrar a es mayor que b si $a es mayor que $b y a NO es mayor que b en el caso contrario:</p>
+                    <code>
+                       <span>if ($a > $b) {</span> <br>
+                        <span>echo "a es mayor que b";</span><br>
+                        <span>} else {</span> <br>
+                          <span>echo "a NO es mayor que b";}</span>  <br>
+                    </code>
+                    <h3>while</h3>
+                    <p>Los bucles while son el tipo más sencillo de bucle en PHP. Se comportan igual que su contrapartida en C. La forma básica de una sentencia while </p>
+
+                        <p>while (expr)
+                            sentencia</p>
+                      <p>  El significado de una sentencia while es simple. Le dice a PHP que ejecute las sentencias anidadas, tanto como la expresión while se evalúe como TRUE. El valor de la expresión es verificado cada vez al inicio del bucle, por lo que incluso si este valor cambia durante la ejecución de las sentencias anidadas, la ejecución no se detendrá hasta el final de la iteración (cada vez que PHP ejecuta las sentencias contenidas en el bucle es una iteración). A veces, si la expresión while se evalúa como FALSE desde el principio, las sentencias anidadas no se ejecutarán ni siquiera una vez.</p>
+                    <code>
+                       <span>$i = 1;</span> <br>
+                       <span>while ($i <= 10) {</span><br>
+                        <span> echo $i++;  /* el valor presentado sería
+                            $i antes del incremento
+                            (post-incremento) */</span><br>
+                            <span>}</span><br>
+                    </code>
+                </section>
+
+                <section class="main-section" id="Funciones_definidas_por_el_usuario">
+                    <header>Funciones definidas por el usuario</header>
+                    <p>Una función puede ser definida empleando una sintaxis como la siguiente:</p>
+                    <code><span>function foo($arg_1, $arg_2, /* ..., */ $arg_n)</span><br>
+                        <span>{</span><br>
+                           <span>echo "Función de ejemplo.\n";</span> <br>
+                           <span>return $valor_devuelto;</span><br>
+                        <span> }</span><br>
+                        </code>
+                        <ul>
+                            <li>No es necesario definir una función antes de que sea referenciada</li>
+                            <li>Cuando una función está definida de una forma condicional como en los dos ejemplos siguientes, sus definiciones deben ser procesadas antes de ser llamadas.</li>
+                            <li>Todas las funciones y clases de PHP tienen ámbito global</li>
+                        </ul>
+                        <p>para saber mas, puede visitar la pagina referencia<a href="https://www.php.net/manual/es/index.php" target="_blank"> aqui</a></p>
+                </section>
+
+            </section>
+            
+            
+        </section>
+            <footer id="footer">
+                Copyright © todos los derechos reservados        </footer>
+
+    </main>
+
+</body>
+</html>
